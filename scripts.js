@@ -19,7 +19,6 @@ function mapLocation() {
         });
         var input = document.getElementById('pac-input');
         var searchBox = new google.maps.places.SearchBox(input);
-        map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
                 directionsDisplay.setMap(map);
         google.maps.event.addDomListener(document.getElementById('routebtn'), 'click', GetLatlong);
@@ -36,7 +35,6 @@ function mapLocation() {
                 calcRoute(latitude, longitude);
             }
         });
-
     }
 
   function calcRoute(latitude, longitude) {
