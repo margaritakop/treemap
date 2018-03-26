@@ -40,8 +40,8 @@ function mapLocation() {
     }
 
   function calcRoute(latitude, longitude) {
-        var start = new google.maps.LatLng(51.50346844984542, -0.18084555272162106);
-        var end = new google.maps.LatLng(latitude, longitude);
+        var end = new google.maps.LatLng(51.50346844984542, -0.18084555272162106);
+        var start = new google.maps.LatLng(latitude, longitude);
 
         var bounds = new google.maps.LatLngBounds();
         bounds.extend(start);
