@@ -33,15 +33,15 @@ function mapLocation() {
             if (status == google.maps.GeocoderStatus.OK) {
                 var latitude = results[0].geometry.location.lat();
                 var longitude = results[0].geometry.location.lng();
-                window.alert(latitude)
-                window.alert(longitude)
+                calcRoute(latitude, longitude);
             }
-        })
+        });
+
     }
 
-  function calcRoute() {
+  function calcRoute(latitude, longitude) {
         var start = new google.maps.LatLng(51.50346844984542, -0.18084555272162106);
-        var end = new google.maps.LatLng(52.000, -0.200);
+        var end = new google.maps.LatLng(latitude, longitude);
 
         var bounds = new google.maps.LatLngBounds();
         bounds.extend(start);
