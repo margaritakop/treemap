@@ -23,6 +23,11 @@ function mapLocation() {
         });
         var input = document.getElementById('pac-input');
         var searchBox = new google.maps.places.SearchBox(input);
+        
+        map.addListener('bounds_changed', function() {
+          searchBox.setBounds(map.getBounds());
+        });
+
 
         directionsDisplay.setMap(map);
         google.maps.event.addDomListener(document.getElementById('walking'), 'click', GetLatlong);
