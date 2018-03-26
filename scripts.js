@@ -27,7 +27,7 @@ function mapLocation() {
         var input = document.getElementById('pac-input');
         var searchBox = new google.maps.places.SearchBox(input);
 
-                directionsDisplay.setMap(map);
+        directionsDisplay.setMap(map);
         google.maps.event.addDomListener(document.getElementById('routebtn'), 'click', GetLatlong);
     }
 
