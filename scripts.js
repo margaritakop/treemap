@@ -1,6 +1,7 @@
 var transport = 'WALKING'
 
 $(".btn-group > .btn").click(function(){
+    document.getElementById("default_transport").classList.remove('active');
     transport = this.value
 });
 
