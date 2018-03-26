@@ -8,14 +8,15 @@
   <body>
 
   	<div class="container">
-    <h3>Get me to The Tree</h3>
-    <input id="pac-input" class="controls" type="text" placeholder="Search Box">
-    <div id="map" class="container"></div>
+      <h3>Get me to The Tree</h3>
+      <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+      <input type="button" id="routebtn" value="route" />
+      <div id="map-canvas"></div>
     </div>
 
     <script src="scripts.js"></script> 
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=&callback=mapLocation">
     </script>
 
   </body>
