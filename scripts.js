@@ -22,7 +22,21 @@ function mapLocation() {
         map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
                 directionsDisplay.setMap(map);
-        google.maps.event.addDomListener(document.getElementById('routebtn'), 'click', calcRoute);
+        google.maps.event.addDomListener(document.getElementById('routebtn'), 'click', GetLatlong);
+    }
+
+    function GetLatlong()
+    {   var geocoder = new google.maps.Geocoder();
+        var address = document.getElementById('pac-input').value;
+        geocoder.geocode({ 'address': address }, function (results, status) {
+
+            if (status == google.maps.GeocoderStatus.OK) {
+                var latitude = results[0].geometry.location.lat();
+                var longitude = results[0].geometry.location.lng();
+                window.alert(latitude)
+                window.alert(longitude)
+            }
+        })
     }
 
   function calcRoute() {
