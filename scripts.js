@@ -1,3 +1,7 @@
+$(".btn-group > .btn").click(function(){
+    var value = this.value
+    window.alert(value)
+});
 
 function mapLocation() {
     var directionsDisplay;
