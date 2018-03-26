@@ -28,7 +28,9 @@ function mapLocation() {
         var searchBox = new google.maps.places.SearchBox(input);
 
         directionsDisplay.setMap(map);
-        google.maps.event.addDomListener(document.getElementById('routebtn'), 'click', GetLatlong);
+        google.maps.event.addDomListener(document.getElementById('walking'), 'click', GetLatlong);
+        google.maps.event.addDomListener(document.getElementById('driving'), 'click', GetLatlong);
+        google.maps.event.addDomListener(document.getElementById('transiting'), 'click', GetLatlong);
     }
 
     function GetLatlong()
