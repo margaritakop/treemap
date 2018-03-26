@@ -27,10 +27,8 @@ function mapLocation() {
 
   function calcRoute() {
         var start = new google.maps.LatLng(51.50346844984542, -0.18084555272162106);
-        //var end = new google.maps.LatLng(38.334818, -181.884886);
         var end = new google.maps.LatLng(52.000, -0.200);
-        /*
-*/
+
         var bounds = new google.maps.LatLngBounds();
         bounds.extend(start);
         bounds.extend(end);
