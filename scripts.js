@@ -1,7 +1,9 @@
+var transport = 'WALKING'
+
 $(".btn-group > .btn").click(function(){
-    var value = this.value
-    window.alert(value)
+    transport = this.value
 });
+
 
 function mapLocation() {
     var directionsDisplay;
@@ -52,7 +54,7 @@ function mapLocation() {
         var request = {
             origin: start,
             destination: end,
-            travelMode: google.maps.TravelMode.DRIVING
+            travelMode: google.maps.TravelMode[transport]
         };
         directionsService.route(request, function (response, status) {
             if (status == google.maps.DirectionsStatus.OK) {
