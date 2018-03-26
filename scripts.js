@@ -2,6 +2,7 @@ $(".btn-group > .btn").click(function(){
     transport = this.value
 });
 
+var marker 
 
 function mapLocation() {
     var directionsDisplay;
@@ -17,7 +18,7 @@ function mapLocation() {
             center: uluru_tree
         };
         map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-        var marker = new google.maps.Marker({
+          marker = new google.maps.Marker({
           position: uluru_tree,
           map: map
         });
@@ -36,7 +37,8 @@ function mapLocation() {
     }
 
     function GetLatlong()
-    {   var geocoder = new google.maps.Geocoder();
+    {   marker.setMap(null);
+        var geocoder = new google.maps.Geocoder();
         var address = document.getElementById('pac-input').value;
         geocoder.geocode({ 'address': address }, function (results, status) {
 
