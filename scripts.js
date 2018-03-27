@@ -2,7 +2,6 @@ $(".btn-group > .btn").click(function(){
     transport = this.value
 });
 
-var marker 
 
 function mapLocation() {
     var directionsDisplay;
