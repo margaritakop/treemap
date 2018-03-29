@@ -1,5 +1,5 @@
 $(".btn-group > .btn").click(function(){
-    transport = this.value
+    transport = this.id
 });
 
 
@@ -16,7 +16,7 @@ function mapLocation() {
             zoom: 10,
             center: uluru_tree
         };
-        map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+        map = new google.maps.Map(document.getElementById('map'), mapOptions);
           marker = new google.maps.Marker({
           position: uluru_tree,
           map: map
@@ -30,9 +30,9 @@ function mapLocation() {
 
 
         directionsDisplay.setMap(map);
-        google.maps.event.addDomListener(document.getElementById('walking'), 'click', GetLatlong);
-        google.maps.event.addDomListener(document.getElementById('driving'), 'click', GetLatlong);
-        google.maps.event.addDomListener(document.getElementById('transiting'), 'click', GetLatlong);
+        google.maps.event.addDomListener(document.getElementById('WALKING'), 'click', GetLatlong);
+        google.maps.event.addDomListener(document.getElementById('DRIVING'), 'click', GetLatlong);
+        google.maps.event.addDomListener(document.getElementById('TRANSIT'), 'click', GetLatlong);
     }
 
     function GetLatlong()
