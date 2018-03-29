@@ -8,6 +8,8 @@ function mapLocation() {
 
 
   function initialize() {
+
+        //set the initial map
         directionsDisplay = new google.maps.DirectionsRenderer();
         var mapOptions = {
             zoom: 10,
@@ -18,21 +20,24 @@ function mapLocation() {
           position: uluru_tree,
           map: map
         });
+        directionsDisplay.setMap(map);
+
+
+        //imput search box
         var input = document.getElementById('pac-input');
         var searchBox = new google.maps.places.SearchBox(input);
-        
+        //bias the search towards the area displayed on the map
         map.addListener('bounds_changed', function() {
           searchBox.setBounds(map.getBounds());
         });
 
 
-        directionsDisplay.setMap(map);
+        //clicking the transport buttons
         google.maps.event.addDomListener(document.getElementById('WALKING'), 'click', 
                   function() {
                               transport = this.id
                               GetLatlong();
                   });
-
         google.maps.event.addDomListener(document.getElementById('DRIVING'), 'click',
                           function() {
                               transport = this.id
