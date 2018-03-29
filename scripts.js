@@ -9,7 +9,7 @@ function mapLocation() {
 
   function initialize() {
 
-        //set the initial map
+        //initial map
         directionsDisplay = new google.maps.DirectionsRenderer();
         var mapOptions = {
             zoom: 10,
@@ -20,8 +20,6 @@ function mapLocation() {
           position: uluru_tree,
           map: map
         });
-        directionsDisplay.setMap(map);
-
 
         //imput search box
         var input = document.getElementById('pac-input');
@@ -31,8 +29,7 @@ function mapLocation() {
           searchBox.setBounds(map.getBounds());
         });
 
-
-        //clicking the transport buttons
+        //transport buttons
         google.maps.event.addDomListener(document.getElementById('WALKING'), 'click', 
                   function() {
                               transport = this.id
