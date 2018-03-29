@@ -1,6 +1,3 @@
-$(".btn-group > .btn").click(function(){
-    transport = this.id
-});
 
 var uluru_tree = {lat: 51.50346844984542, lng: -0.18084555272162106};
 
@@ -30,9 +27,22 @@ function mapLocation() {
 
 
         directionsDisplay.setMap(map);
-        google.maps.event.addDomListener(document.getElementById('WALKING'), 'click', GetLatlong);
-        google.maps.event.addDomListener(document.getElementById('DRIVING'), 'click', GetLatlong);
-        google.maps.event.addDomListener(document.getElementById('TRANSIT'), 'click', GetLatlong);
+        google.maps.event.addDomListener(document.getElementById('WALKING'), 'click', 
+                  function() {
+                              transport = this.id
+                              GetLatlong();
+                  });
+
+        google.maps.event.addDomListener(document.getElementById('DRIVING'), 'click',
+                          function() {
+                              transport = this.id
+                              GetLatlong();
+                  });
+        google.maps.event.addDomListener(document.getElementById('TRANSIT'), 'click',
+                          function() {
+                              transport = this.id
+                              GetLatlong();
+                  });
     }
 
     function GetLatlong()
