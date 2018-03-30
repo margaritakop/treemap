@@ -27,7 +27,7 @@ function mapLocation() {
         marker = new google.maps.Marker({
           position: latlong_tree,
           map: map,
-          icon: tree_icon
+          //icon: tree_icon
           });
 
         // Get the user`s location
@@ -46,7 +46,7 @@ function mapLocation() {
           marker = new google.maps.Marker({
           position: latlong_you,
           map: map,
-          icon: you_icon
+          //icon: you_icon
           });
 
           //set new bounds to the map accordingly
