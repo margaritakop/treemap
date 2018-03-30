@@ -1,5 +1,5 @@
 
-var uluru_tree = {lat: 51.50346844984542, lng: -0.18084555272162106};
+var latlong_tree = {lat: 51.50346844984542, lng: -0.18084555272162106};
 
 function mapLocation() {
     var directionsDisplay;
@@ -13,11 +13,11 @@ function mapLocation() {
         directionsDisplay = new google.maps.DirectionsRenderer();
         var mapOptions = {
             zoom: 10,
-            center: uluru_tree
+            center: latlong_tree
         };
         map = new google.maps.Map(document.getElementById('map'), mapOptions);
           marker = new google.maps.Marker({
-          position: uluru_tree,
+          position: latlong_tree,
           map: map
         });
 
@@ -54,26 +54,30 @@ function mapLocation() {
         geocoder.geocode({ 'address': address }, function (results, status) {
 
             if (status == google.maps.GeocoderStatus.OK) {
-                var latitude = results[0].geometry.location.lat();
-                var longitude = results[0].geometry.location.lng();
-                calcRoute(latitude, longitude);
+                var lat_address = results[0].geometry.location.lat();
+                var long_address = results[0].geometry.location.lng();
+                calcRoute(lat_address, long_address);
             }
         });
     }
 
-  function calcRoute(latitude, longitude) {
-        var end = new google.maps.LatLng(uluru_tree);
-        var start = new google.maps.LatLng(latitude, longitude);
+  function calcRoute(lat, long) {
+        var end = new google.maps.LatLng(latlong_tree);
+        var start = new google.maps.LatLng(lat, long);
 
+        //set new bounds to the map
         var bounds = new google.maps.LatLngBounds();
         bounds.extend(start);
         bounds.extend(end);
         map.fitBounds(bounds);
+
+        //calculate the route
         var request = {
             origin: start,
             destination: end,
             travelMode: google.maps.TravelMode[transport]
         };
+
         directionsService.route(request, function (response, status) {
             if (status == google.maps.DirectionsStatus.OK) {
                 directionsDisplay.setDirections(response);
