@@ -27,18 +27,9 @@ function mapLocation() {
               lat: position.coords.latitude,
               lng: position.coords.longitude
             };
-            window.alert('Your location: ' + String(position.coords.latitude) + ' ' + String(position.coords.longitude));
-            infoWindow.setPosition(pos);
-            infoWindow.setContent('Location found.');
-            infoWindow.open(map);
-            map.setCenter(pos);
-          }, function() {
-            handleLocationError(true, infoWindow, map.getCenter());
-          });
-        } else {
-          // Browser doesn't support Geolocation
-          handleLocationError(false, infoWindow, map.getCenter());
-        }
+            bootbox.alert('Your location: ' + String(position.coords.latitude) + ' ' + String(position.coords.longitude));
+          }, function() {});
+        } 
 
         //transport buttons
         google.maps.event.addDomListener(document.getElementById('WALKING'), 'click', 
