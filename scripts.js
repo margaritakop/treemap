@@ -56,7 +56,7 @@ function mapLocation() {
                 var long_address = results[0].geometry.location.lng();
                 calcRoute(lat_address, long_address);
             }
-            else {alert("Could not find coordinates for" + address + ".")}
+            else {bootbox.alert("Could not find coordinates for" + address + ".")}
         });
     }
 
