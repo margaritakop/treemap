@@ -11,17 +11,23 @@ function mapLocation() {
 
         //initial map
         directionsDisplay = new google.maps.DirectionsRenderer();
+        directionsDisplay.setOptions( { suppressMarkers: true } );
         var mapOptions = {
-            zoom: 4,
+            zoom: 10,
             center: latlong_tree
         };
         map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
         //add marker for the tree
+        var tree_icon = {
+                  url: 'tree.PNG', // url
+                  scaledSize: new google.maps.Size(50, 50), // scaled size
+              };
+
         marker = new google.maps.Marker({
           position: latlong_tree,
           map: map,
-          icon: 'tree.PNG'
+          icon: tree_icon
           });
 
         // Get the user`s location
@@ -33,9 +39,14 @@ function mapLocation() {
             };
 
           //add marker for user`s position
+          var you_icon = {
+                  url: 'you.PNG', // url
+                  scaledSize: new google.maps.Size(50, 50), // scaled size
+              };
           marker = new google.maps.Marker({
           position: latlong_you,
-          map: map
+          map: map,
+          icon: you_icon
           });
 
           //set new bounds to the map accordingly
@@ -46,7 +57,6 @@ function mapLocation() {
 
           });
         }; 
-
 
 
         //transport buttons
@@ -69,7 +79,6 @@ function mapLocation() {
 
   function calcRoute(latlong_you) {
         //remove the original marker and define the new end-start points
-        marker.setMap(null);
         var end = new google.maps.LatLng(latlong_tree);
         var start = new google.maps.LatLng(latlong_you);
 
