@@ -28,7 +28,6 @@ function mapLocation() {
               lat: position.coords.latitude,
               lng: position.coords.longitude
             };
-            bootbox.alert('Your location: ' + String(position.coords.latitude) + ' ' + String(position.coords.longitude));
           }, function() {});
         }; 
 
