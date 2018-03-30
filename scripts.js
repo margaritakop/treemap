@@ -86,7 +86,7 @@ function mapLocation() {
                 directionsDisplay.setMap(map);
             } else {
                 var address = document.getElementById('pac-input').value;
-                alert("Could not fid rout from " + address + " by " + transport.toLowerCase() + " to The Tree." );
+                bootbox.alert("Could not fid rout from " + address + " by " + transport.toLowerCase() + " to The Tree." );
             }
         });
     }
