@@ -55,7 +55,7 @@ function mapLocation() {
           bounds.extend(latlong_you);
           map.fitBounds(bounds);
 
-          transport = 'WLAKING'
+          transport = 'WALKING'
           calcRoute(latlong_you)
           });
         }; 
@@ -70,11 +70,13 @@ function mapLocation() {
         google.maps.event.addDomListener(document.getElementById('DRIVING'), 'click',
                           function() {
                               transport = this.id;
+                              document.getElementById("WALKING").classList.remove('active');
                               calcRoute(latlong_you);
                   });
         google.maps.event.addDomListener(document.getElementById('TRANSIT'), 'click',
                           function() {
                               transport = this.id;
+                              document.getElementById("WALKING").classList.remove('active');
                               calcRoute(latlong_you);
                   });
     }
