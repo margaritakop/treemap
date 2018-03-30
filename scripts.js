@@ -37,6 +37,13 @@ function mapLocation() {
           map: map
           });
 
+          //set new bounds to the map accordingly
+          var bounds = new google.maps.LatLngBounds();
+          bounds.extend(latlong_tree);
+          bounds.extend(latlong_you);
+          map.fitBounds(bounds);
+
+
           }, function() {});
 
 
@@ -67,12 +74,6 @@ function mapLocation() {
         marker.setMap(null);
         var end = new google.maps.LatLng(latlong_tree);
         var start = new google.maps.LatLng(latlong_you);
-
-        //set new bounds to the map
-        var bounds = new google.maps.LatLngBounds();
-        bounds.extend(start);
-        bounds.extend(end);
-        map.fitBounds(bounds);
 
         //calculate the route
         var request = {
