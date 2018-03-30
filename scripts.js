@@ -20,13 +20,7 @@ function mapLocation() {
           map: map
         });
 
-        //imput search box
-        var input = document.getElementById('pac-input');
-        var searchBox = new google.maps.places.SearchBox(input);
-        //bias the search towards the area displayed on the map
-        map.addListener('bounds_changed', function() {
-          searchBox.setBounds(map.getBounds());
-        });
+
 
         //transport buttons
         google.maps.event.addDomListener(document.getElementById('WALKING'), 'click', 
