@@ -1,11 +1,10 @@
 
-var latlong_tree = {lat: 51.50346844984542, lng: -0.18084555272162106};
-
 function mapLocation() {
     var directionsDisplay;
-    var directionsService = new google.maps.DirectionsService();
     var map;
+    var latlong_tree = {lat: 51.50346844984542, lng: -0.18084555272162106};
 
+    google.maps.event.addDomListener(window, 'load', initialize);
 
   function initialize() {
 
@@ -79,6 +78,7 @@ function mapLocation() {
             travelMode: google.maps.TravelMode[transport]
         };
 
+        var directionsService = new google.maps.DirectionsService();
         directionsService.route(request, function (response, status) {
             if (status == google.maps.DirectionsStatus.OK) {
                 directionsDisplay.setDirections(response);
@@ -88,7 +88,6 @@ function mapLocation() {
             }
         });
     }
-
-    google.maps.event.addDomListener(window, 'load', initialize);
 }
+
 mapLocation();
