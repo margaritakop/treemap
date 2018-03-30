@@ -46,7 +46,7 @@ function mapLocation() {
                   });
     }
 
-    function getRout(){  
+  function getRout(){  
         var geocoder = new google.maps.Geocoder();
         var address = document.getElementById('pac-input').value;
         geocoder.geocode({ 'address': address }, function (results, status) {
@@ -56,6 +56,7 @@ function mapLocation() {
                 var long_address = results[0].geometry.location.lng();
                 calcRoute(lat_address, long_address);
             }
+            else {alert("Could not find coordinates for" + address + ".")}
         });
     }
 
@@ -84,7 +85,8 @@ function mapLocation() {
                 directionsDisplay.setDirections(response);
                 directionsDisplay.setMap(map);
             } else {
-                alert("Directions Request from " + start.toUrlValue(6) + " to " + end.toUrlValue(6) + " failed: " + status);
+                var address = document.getElementById('pac-input').value;
+                alert("Could not fid rout from " + address + " by " + transport.toLowerCase() + " to The Tree." );
             }
         });
     }
