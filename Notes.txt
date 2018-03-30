@@ -3,4 +3,4 @@ Notes
 
 Positioning of marker B
 
-Marker B sometime appeares not exactly where the original destination marker is put initially. The original marker was therefore removed at the rout planner stage, to make the design better looking, but this causes inaccuracy. Alternative solution could be to force marker B to be exactly at the point of the original marker. Drawback: may need to draw a 'walking' line across unmarked areas and mistakes could arise from that.
+Marker B swould sometime appeares not exactly where the original destination marker is put initially. The B and A markers were removed at the rout planner stage, to make the design better looking, but this causes inaccuracy. Alternative solution could be to force marker B to be exactly at the point of the original marker. Drawback: may need to draw a 'walking' line across unmarked areas and mistakes could arise from that.
