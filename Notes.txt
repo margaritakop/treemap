@@ -4,8 +4,3 @@ Notes
 Positioning of marker B
 
 Marker B sometime appeares not exactly where the original destination marker is put initially. The original marker was therefore removed at the rout planner stage, to make the design better looking, but this causes inaccuracy. Alternative solution could be to force marker B to be exactly at the point of the original marker. Drawback: may need to draw a 'walking' line across unmarked areas and mistakes could arise from that.
-
-
-Handling route not found
-
-Sometimes there is no rout found between two places (eg. Okhaldunga, Nepal to The Tree). The coordinates of the place are located and the map zoomes out/in appropriately. However, the previous search rout is still shown and no market is put at the given origin. Better way to handle this would be to remove the previous route and mark the given origin on the map. Maybe propose a route from the closest point where it is possible for Google maps to give a rout from. 
