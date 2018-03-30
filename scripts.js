@@ -16,10 +16,12 @@ function mapLocation() {
             center: latlong_tree
         };
         map = new google.maps.Map(document.getElementById('map'), mapOptions);
-          marker = new google.maps.Marker({
+
+        //add marker for the tree
+        marker = new google.maps.Marker({
           position: latlong_tree,
           map: map
-        });
+          });
 
         // Get the user`s location
         if (navigator.geolocation) {
@@ -28,8 +30,19 @@ function mapLocation() {
               lat: position.coords.latitude,
               lng: position.coords.longitude
             };
+
+          //add marker for user`s position
+          marker = new google.maps.Marker({
+          position: latlong_you,
+          map: map
+          });
+
           }, function() {});
+
+
         }; 
+
+
 
         //transport buttons
         google.maps.event.addDomListener(document.getElementById('WALKING'), 'click', 
