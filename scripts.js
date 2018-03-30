@@ -27,7 +27,7 @@ function mapLocation() {
               lat: position.coords.latitude,
               lng: position.coords.longitude
             };
-            window.alert(String(position.coords.latitude) + String(position.coords.longitude))
+            window.alert('Your location: ' + String(position.coords.latitude) + ' ' + String(position.coords.longitude));
             infoWindow.setPosition(pos);
             infoWindow.setContent('Location found.');
             infoWindow.open(map);
