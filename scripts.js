@@ -33,22 +33,21 @@ function mapLocation() {
         google.maps.event.addDomListener(document.getElementById('WALKING'), 'click', 
                   function() {
                               transport = this.id
-                              GetLatlong();
+                              getRout();
                   });
         google.maps.event.addDomListener(document.getElementById('DRIVING'), 'click',
                           function() {
                               transport = this.id
-                              GetLatlong();
+                              getRout();
                   });
         google.maps.event.addDomListener(document.getElementById('TRANSIT'), 'click',
                           function() {
                               transport = this.id
-                              GetLatlong();
+                              getRout();
                   });
     }
 
-    function GetLatlong()
-    {   marker.setMap(null);
+    function getRout(){  
         var geocoder = new google.maps.Geocoder();
         var address = document.getElementById('pac-input').value;
         geocoder.geocode({ 'address': address }, function (results, status) {
@@ -62,6 +61,8 @@ function mapLocation() {
     }
 
   function calcRoute(lat, long) {
+        //remove the original marker and define the new end-start points
+        marker.setMap(null);
         var end = new google.maps.LatLng(latlong_tree);
         var start = new google.maps.LatLng(lat, long);
 
