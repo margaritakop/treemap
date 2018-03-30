@@ -43,8 +43,7 @@ function mapLocation() {
           bounds.extend(latlong_you);
           map.fitBounds(bounds);
 
-
-          }, function() {});
+          });
 
 
         }; 
