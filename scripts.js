@@ -20,7 +20,8 @@ function mapLocation() {
         //add marker for the tree
         marker = new google.maps.Marker({
           position: latlong_tree,
-          map: map
+          map: map,
+          icon: 'tree.PNG'
           });
 
         // Get the user`s location
@@ -44,8 +45,6 @@ function mapLocation() {
           map.fitBounds(bounds);
 
           });
-
-
         }; 
 
 
