@@ -3,7 +3,7 @@ function mapLocation() {
     var directionsDisplay;
     var map;
     var latlong_tree = {lat: 51.50346844984542, lng: -0.18084555272162106};
-    var latlong_you = {lat: 46.2579605, lng: 20.155540100000003};
+    var latlong_you
 
     google.maps.event.addDomListener(window, 'load', initialize);
 
@@ -21,10 +21,10 @@ function mapLocation() {
           map: map
         });
 
-        // Try HTML5 geolocation.
+        // Get the user`s location
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(function(position) {
-            var pos = {
+            latlong_you = {
               lat: position.coords.latitude,
               lng: position.coords.longitude
             };
