@@ -97,7 +97,7 @@ function mapLocation() {
                 directionsDisplay.setDirections(response);
                 directionsDisplay.setMap(map);
             } else {
-                bootbox.alert("Unfortunately, the rout from your location to the Tree by " + transport.toLowerCase() + " could not be found." );
+                bootbox.alert("The route from your location to the Tree by " + transport.toLowerCase() + " could not be found." );
             }
         });
     }
