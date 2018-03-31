@@ -37,6 +37,8 @@ function mapLocation() {
               lat: position.coords.latitude,
               lng: position.coords.longitude
             };
+        //TODO: Add an alert if the browser access to location is turned off, to prompt the user to turn it back.
+        //use bootbox.alert() - needed libraries are ready to use
 
           //add marker for user`s position
           var you_icon = {
