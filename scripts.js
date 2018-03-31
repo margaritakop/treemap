@@ -84,14 +84,10 @@ function mapLocation() {
     }
 
   function calcRoute(latlong_you) {
-        //remove the original marker and define the new end-start points
-        var end = new google.maps.LatLng(latlong_tree);
-        var start = new google.maps.LatLng(latlong_you);
 
-        //calculate the route
         var request = {
-            origin: start,
-            destination: end,
+            origin: latlong_you,
+            destination: latlong_tree,
             travelMode: google.maps.TravelMode[transport]
         };
 
