@@ -20,7 +20,7 @@ function mapLocation() {
 
         //add marker for the tree
         var tree_icon = {
-                  url: 'tree.PNG', // url
+                  url: ' treemap/tree.png ', // url
                   scaledSize: new google.maps.Size(50, 50), // scaled size
               };
 
