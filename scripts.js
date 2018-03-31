@@ -101,8 +101,7 @@ function mapLocation() {
                 directionsDisplay.setDirections(response);
                 directionsDisplay.setMap(map);
             } else {
-                var address = document.getElementById('pac-input').value;
-                bootbox.alert("Could not fid rout from " + address + " by " + transport.toLowerCase() + " to The Tree." );
+                bootbox.alert("Unfortunately, the rout from your location to the Tree by " + transport.toLowerCase() + " could not be found." );
             }
         });
     }
