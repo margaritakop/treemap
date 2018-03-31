@@ -1,6 +1,8 @@
-Notes
+Notes to discuss
 
 
-Positioning of marker B
+Positioning of endpoint marker
 
-Marker B swould sometime appeares not exactly where the original destination marker is put initially. The B and A markers were removed at the rout planner stage, to make the design better looking, but this causes inaccuracy. Alternative solution could be to force marker B to be exactly at the point of the original marker. Drawback: may need to draw a 'walking' line across unmarked areas and mistakes could arise from that.
+Marker B (endpoint) would sometime appear not exactly where the original destination marker is put initially. The B and A markers were removed at the rout planner stage, to make the design better looking, but this causes an occasional gap between the end of the line and the marker. It would be good to draw a line across the gap but that may sometimes give wrong routs (eg across lake or building).
+
+Eg. from IC, driving mode does not show the rout all the way to the tree (see screenshots). latlong_you = {lat: 51.498867, lng: -0.174457}
