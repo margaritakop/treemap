@@ -40,7 +40,7 @@ function mapLocation() {
 
           //add marker for user`s position
           var you_icon = {
-                  url: 'you.PNG', // url
+                  url: 'https://raw.githubusercontent.com/margaritakop/treemap/master/you.png', // url
                   scaledSize: new google.maps.Size(50, 50), // scaled size
               };
           marker = new google.maps.Marker({
